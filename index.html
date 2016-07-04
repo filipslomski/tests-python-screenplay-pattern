@@ -1,0 +1,32 @@
+<html ng-app="app">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+</head>
+ <body ng-controller="LoginController as vm">
+   <div id="auth-message" ng-show="vm.resultCheck">
+    {{vm.auth_message}}
+   </div>
+   <form id="loginForm" ng-submit="vm.login()" ng-hide="vm.resultCheck">
+     <input id="username" type="text" ng-model="vm.username" placeholder="username" />
+     <input id="password" type="password" ng-model="vm.password" placeholder="password" />
+     <button id="submit" type="button" value="submit" ng-click="vm.login()">Submit</button>
+   </form>
+   <script>
+   angular.module('app', []).
+   controller('LoginController', ['$scope', function($scope) {
+     var vm = this;
+     
+     vm.login = function() {
+      console.log('submitting')
+      if (vm.username === 'registeredUser') {
+          vm.auth_message = 'The meaning of life is 42';
+            vm.resultCheck = true;
+        } else {
+          vm.auth_message = 'Please sign up';
+          vm.resultCheck = true;
+        }
+     };
+   }])
+   </script>
+ </body>
+<html>

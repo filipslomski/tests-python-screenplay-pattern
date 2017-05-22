@@ -2,7 +2,7 @@ Feature: Authentication
 
     Scenario Outline: User logs in
       Given a user visits the site
-      When I log in as "<username>"
+      When I log in as <username>
       Then I should see the message <auth message>
       
       Examples: Users

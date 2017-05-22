@@ -1,3 +1,4 @@
 .DS_Store
 features/browser.pyc
 features/chromedriver
+.idea/

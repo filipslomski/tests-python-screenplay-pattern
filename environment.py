@@ -3,12 +3,12 @@ from selenium import webdriver
 import SimpleHTTPServer
 import SocketServer
 import threading
-import pageObjects.loginPage
+import pageObjects.loginPage as loginPage
 
 
-def before_all(context):  
+def before_all(context):
   context.browser = Browser()
-  context.login_page = pageObjects.loginPage.LoginPage()
+  context.login_page = loginPage.LoginPage()
   PORT = 8000
   Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
   context.server = SocketServer.TCPServer(("", PORT), Handler)

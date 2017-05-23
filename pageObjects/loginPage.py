@@ -16,8 +16,11 @@ class LoginPage(Browser):
         self.auth_message = "auth-message"
         self.LOGIN = '/'
 
-    def login(self, username, password):
+    def open(self):
         self.visit(self.LOGIN)
+
+    def login(self, username, password):
+        self.open()
         self.find_by_id(self.username_field).send_keys(username)
         self.find_by_id(self.password_field).send_keys(password)
         self.find_by_id(self.submit_button).click()

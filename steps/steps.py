@@ -2,7 +2,7 @@ class BaseSteps(object):
 
     @given(u'a user visits the site')
     def impl(context):
-        context.browser.visit()
+        context.login_page.open()
 
     @when(u'I log in as {username}')
     def step_impl(context, username):

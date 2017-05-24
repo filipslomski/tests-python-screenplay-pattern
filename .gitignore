@@ -2,3 +2,4 @@
 features/chromedriver
 *.pyc
 .idea/
+behave-python/

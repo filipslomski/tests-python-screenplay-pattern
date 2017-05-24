@@ -1,23 +1,18 @@
 from browser import Browser
 from selenium import webdriver
+from pageObjects.basePage import BasePage
 
 
-class LoginPage(Browser):
+class LoginPage(BasePage):
 
-    username_field = ""
-    password_field = ""
-    submit_button = ""
-    auth_message = ""
-
-    def __init__(self):
-        self.username_field = "username"
-        self.password_field = "password"
-        self.submit_button = "submit"
-        self.auth_message = "auth-message"
-        self.LOGIN = '/'
+    username_field = "username"
+    password_field = "password"
+    submit_button = "submit"
+    auth_message = "auth-message"
+    URL = '/'
 
     def open(self):
-        self.visit(self.LOGIN)
+        self.visit(self.URL)
 
     def login(self, username, password):
         self.open()

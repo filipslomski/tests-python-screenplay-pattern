@@ -1,4 +1,7 @@
-from selenium import webdriver  
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 class Browser(object):
@@ -19,4 +22,3 @@ class Browser(object):
 
     def find_by_xpath(self, selector):
         return self.driver.find_element_by_xpath(selector)
-

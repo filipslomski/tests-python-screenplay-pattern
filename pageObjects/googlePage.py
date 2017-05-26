@@ -2,14 +2,14 @@ from browser import Browser
 from selenium import webdriver
 import pageObjects.basePage as basePage
 from pageObjects.basePage import BasePage
-from elements.baseElement import BaseELement
+from elements.element import Element
 from selenium.webdriver.common.by import By
 
 
 class GooglePage(BasePage):
 
-    search_field = BaseELement(By.ID, "lst-ib")
-    search_suggestion = BaseELement(By.XPATH, ".//ul[@role='listbox']/li//div[string(.)='{argument}']")
+    search_field = Element(By.ID, "lst-ib")
+    search_suggestion = Element(By.XPATH, ".//ul[@role='listbox']/li//div[string(.)='{argument}']")
     URL = 'www.google.pl'
 
     def open(self):

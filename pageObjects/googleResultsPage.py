@@ -1,13 +1,13 @@
 from browser import Browser
 from selenium import webdriver
 from pageObjects.basePage import BasePage
-from elements.baseElement import BaseELement
+from elements.element import Element
 from selenium.webdriver.common.by import By
 
 
 class GoogleResultsPage(BasePage):
 
-    result_stats = BaseELement(By.ID, "resultStats")
+    result_stats = Element(By.ID, "resultStats")
     URL = "www.google.pl/?q="
 
     def open(self):

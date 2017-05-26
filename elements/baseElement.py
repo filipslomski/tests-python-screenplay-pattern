@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
 
-class BaseELement(object):
+class BaseElement(object):
 
     original_selector = ""
     selector = ""

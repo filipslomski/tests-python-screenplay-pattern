@@ -41,5 +41,11 @@ class BaseElement(object):
         )
         return False if is_visible == False else True
 
+    def is_element_present(self):
+        is_present = WebDriverWait(Browser.driver, 5).until(
+            EC.presence_of_element_located((self.locator, self.selector))
+        )
+        return False if is_present == False else True
+
     def get_text(self):
         return self.element.text

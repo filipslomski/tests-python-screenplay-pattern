@@ -1,8 +1,7 @@
 from browser import Browser
 from selenium import webdriver
+from stringConstants import Strings
 
 
 class BasePage(Browser):
-
-    def element_with_argument(self, selector, argument):
-        return selector.replace('{argument}', argument)
+    string = Strings.EXAMPLE_STRING

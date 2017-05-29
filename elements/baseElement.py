@@ -35,17 +35,23 @@ class BaseElement(object):
     def set_value(self, value):
         self.element.send_keys(value)
 
-    def is_element_visible(self):
-        is_visible = WebDriverWait(Browser.driver, 5).until(
+    def is_element_visible(self, timeout = 5):
+        is_visible = WebDriverWait(Browser.driver, timeout).until(
             EC.visibility_of_element_located((self.locator, self.selector))
         )
         return False if is_visible == False else True
 
-    def is_element_present(self):
-        is_present = WebDriverWait(Browser.driver, 5).until(
+    def is_element_present(self, timeout):
+        is_present = WebDriverWait(Browser.driver, timeout).until(
             EC.presence_of_element_located((self.locator, self.selector))
         )
         return False if is_present == False else True
+
+    def is_element_visible_now(self):
+        return self.element.is_displayed()
+
+    def is_element_present_now(self):
+        return self.is_element_present(0)
 
     def get_text(self):
         return self.element.text

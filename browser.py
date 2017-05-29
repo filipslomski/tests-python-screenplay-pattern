@@ -5,7 +5,6 @@ class Browser(object):
     
     base_url = 'http://'
     driver = webdriver.Chrome('./chromedriver')
-    driver.implicitly_wait(10)
     
     def close(self):
         self.driver.quit()

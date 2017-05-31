@@ -45,7 +45,7 @@ class BaseElement(object):
         is_present = WebDriverWait(Browser.driver, timeout).until(
             EC.presence_of_element_located((self.locator, self.selector))
         )
-        return False if is_present == False else True
+        return False if not is_present else True
 
     def is_element_visible_now(self):
         return self.element.is_displayed()

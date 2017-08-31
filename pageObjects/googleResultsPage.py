@@ -1,5 +1,3 @@
-from browser import Browser
-from selenium import webdriver
 from pageObjects.basePage import BasePage
 from elements.element import Element
 from selenium.webdriver.common.by import By
@@ -7,11 +5,12 @@ from selenium.webdriver.common.by import By
 
 class GoogleResultsPage(BasePage):
 
-    result_stats = Element(By.ID, "resultStats")
     URL = "www.google.pl/?q="
 
-    def open(self):
-        self.visit(self.URL)
+    def __init__(self, context):
+        super().__init__(context)
+        self.result_stats = Element(By.ID, "resultStats", context)
+
 
     def get_number_of_results(self):
         result_string = self.result_stats.get_element().get_text()

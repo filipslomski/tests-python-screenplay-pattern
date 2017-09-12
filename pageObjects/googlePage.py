@@ -19,16 +19,16 @@ class GooglePage(BasePage):
         self.logged_user_email_info = Element(By.XPATH, ".//*[contains(@class,'gb_xb')]", context)
 
     def fill_search_field(self, search_phrase):
-        self.search_field.get_element().set_value(search_phrase)
+        self.search_field.value = search_phrase
 
     def select_search_suggestion(self, suggestion):
-        self.search_suggestion.set_locator_parameter(suggestion).get_element().click()
+        self.search_suggestion.set_parameters(suggestion).click()
 
     def login_as(self, email, password):
-        self.email_field.set_value(email)
-        self.password_field.set_value(password)
+        self.email_field.value = email
+        self.password_field.value = password
         self.login_next_button.click()
 
     def is_logged_user(self, name):
         self.logged_user_icon.click()
-        return self.logged_user_email_info.get_text() == name
+        return self.logged_user_email_info.text == name

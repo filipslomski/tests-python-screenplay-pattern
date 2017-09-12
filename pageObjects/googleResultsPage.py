@@ -13,7 +13,7 @@ class GoogleResultsPage(BasePage):
 
 
     def get_number_of_results(self):
-        result_string = self.result_stats.get_element().get_text()
+        result_string = self.result_stats.text
         number_of_results = ""
         for s in result_string.split():
             if s.isdigit():

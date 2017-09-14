@@ -1,14 +1,21 @@
 from interactions.interaction import Interaction
-
+from pageObjects.googlePage import GooglePage
+from pageObjects.googleResultsPage import GoogleResultsPage
 
 class Open(Interaction):
 
     def __init__(self, context):
-        self.custom_url = None
+        self.context = context
+        self.url = None
         super().__init__(context)
 
     def custom_url(self, page_url):
-        self.custom_url = page_url
+        self.url = page_url
+
         return self
 
     def page(self, page_name):
+        self.url = page_name.URL
+
+    def execute(self):
+        self.context.browser.get(self.url)

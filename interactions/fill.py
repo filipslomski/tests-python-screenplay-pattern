@@ -4,12 +4,12 @@ from interactions.interaction import Interaction
 class Fill(Interaction):
 
     def __init__(self, context):
-        self.value_to_fill = None
+        self.value_to_enter = None
         self.field = None
         super().__init__(context)
 
     def value(self, value):
-        self.value_to_fill = value
+        self.value_to_enter = value
 
         return self
 
@@ -17,3 +17,6 @@ class Fill(Interaction):
         self.field = field
 
         return self
+
+    def execute(self):
+        self.field.value = self.value_to_enter

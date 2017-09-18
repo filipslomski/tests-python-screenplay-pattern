@@ -1,6 +1,4 @@
 from interactions.interaction import Interaction
-from pageObjects.googlePage import GooglePage
-from pageObjects.googleResultsPage import GoogleResultsPage
 
 class Open(Interaction):
 
@@ -15,7 +13,7 @@ class Open(Interaction):
         return self
 
     def page(self, page_name):
-        self.url = page_name.URL
+        self.url = self.context.page_name.URL
 
     def execute(self):
         self.context.browser.get(self.url)

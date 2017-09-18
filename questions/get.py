@@ -1,7 +1,7 @@
 from questions.question import Question
 
 
-class get(Question):
+class Get(Question):
 
     def __init__(self, context):
         self.element = None

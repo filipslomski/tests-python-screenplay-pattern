@@ -1,7 +1,6 @@
 from tasks.task import Task
 from interactions.fill import Fill
 from interactions.click import Click
-from pageObjects.googlePage import GooglePage
 
 
 class Search(Task):
@@ -22,10 +21,11 @@ class Search(Task):
         return self
 
     def perform_as(self, actor):
-        actions = (Fill(self.context).value(self.search_phrase).into_field(GooglePage.search_field),)
+        actions = (Fill(self.context).value(self.search_phrase).into_field(self.context.google_page.search_field),)
         if self.search_suggestion:
             actions = actions + (
-            Click(self.context).element(GooglePage.search_suggestion.set_parameters(self.search_suggestion)),)
+                Click(self.context).element(
+                    self.context.google_page.search_suggestion.set_parameters(self.search_suggestion)),)
 
         return actor.attempts_to(
             actions

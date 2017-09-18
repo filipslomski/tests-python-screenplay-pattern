@@ -4,8 +4,7 @@ Feature: Google
   @search
   Scenario: Search in google
     Given I am on google page
-    When I search for dota
-    And I select dota 2 from search suggestions
+    When I search for dota then select dota 2 from suggestions list
     Then I should see over 50000 results
 
    @login

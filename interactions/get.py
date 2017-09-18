@@ -1,7 +1,7 @@
-from questions.question import Question
+from interactions.interaction import Interaction
 
 
-class Get(Question):
+class Get(Interaction):
 
     def __init__(self, context):
         self.element = None

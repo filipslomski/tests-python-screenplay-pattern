@@ -1,8 +1,8 @@
 from behave import *
+
+from tasks.login_as import LoginAs
 from tasks.open_web_page import OpenWebPage
 from tasks.search_for_phrase import Search
-from tasks.login_as import LoginAs
-from questions.get import Get
 
 credentials = {
     'A': ('filip.slomski@gmail.com', 'pass1'),

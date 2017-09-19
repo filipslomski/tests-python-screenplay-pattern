@@ -7,9 +7,8 @@ class GoogleResultsPage(BasePage):
 
     URL = "www.google.pl/?q="
 
-    result_stats = Element(By.ID, "resultStats", context)
-
     def __init__(self, context):
+        self.result_stats = Element(By.ID, "resultStats", context)
         super().__init__(context)
 
 

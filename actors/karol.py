@@ -1,4 +1,7 @@
 from actors.actor import Actor
 
+
 class Karol(Actor):
-    pass
+
+    email = "karol.slomski@gmail.com"
+    password = "password123"

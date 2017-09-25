@@ -28,5 +28,5 @@ def step_impl(context, actor):
 
 @then(u'he should see himself as a logged user')
 def imple(context):
-    assert GetLoggedUser(context).perform_as(stage.the_actor_in_the_spotlight())
-    assert context.google_page.is_logged_user(stage.the_actor_in_the_spotlight().email)
+    assert GetLoggedUser(context).perform_as(
+        stage.the_actor_in_the_spotlight()) == stage.the_actor_in_the_spotlight().email
